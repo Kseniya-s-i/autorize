@@ -99,12 +99,12 @@ def reqister():
 
 @app.route('/')
 def ind():
-    if current_user.is_authenticated:
-        jobs = session.query(Jobs).filter(
-            (Jobs.user == current_user) | (not Jobs.is_finished))
-    else:
-        jobs = session.query(Jobs).filter(not Jobs.is_finished)
-    return render_template("index.html", news=jobs)
+    # if current_user.is_authenticated:
+    #     jobs = session.query(Jobs).filter(
+    #         (Jobs.user == current_user) | (not Jobs.is_finished))
+    # else:
+    #     jobs = session.query(Jobs).filter(not Jobs.is_finished)
+    return render_template("index.html")
 
 
 if __name__ == '__main__':
